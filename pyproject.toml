@@ -1,0 +1,26 @@
+[project]
+name = "vicare_energy_api_lib"
+version = "0.1.0"
+description = "Fetching energy data from Viessman E3 devices"
+authors = [
+    { name="Michael", email="notme@bieber-home.net" }
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
