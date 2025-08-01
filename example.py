@@ -14,7 +14,7 @@ async def main():
     async with aiohttp.ClientSession() as session:
         auth = Auth(
             session,
-            "https://api.viessmann.com/iot/v1/analytics-api/dataLake/chronos/v0/thermal_energy",
+            "https://api.viessmann.com/iot/v1/analytics-api/dataLake/chronos/v0",
             access_token,
         )
         payload = {
@@ -29,7 +29,7 @@ async def main():
             ],
             "resolution": "1d"
         }
-        resp = await auth.request("post", "", json=payload)
+        resp = await auth.request("post", "thermal_energy", json=payload)
         print("HTTP response status code", resp.status)
         print("HTTP response JSON content", await resp.json())
 
